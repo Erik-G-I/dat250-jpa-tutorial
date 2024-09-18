@@ -38,18 +38,18 @@ public class Pincode {
         this.count = count;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Pincode pincode = (Pincode) o;
-        return Objects.equals(id, pincode.id) && Objects.equals(code, pincode.code) && Objects.equals(count, pincode.count);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, code, count);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Pincode pincode = (Pincode) o;
+//        return Objects.equals(id, pincode.id) && Objects.equals(code, pincode.code) && Objects.equals(count, pincode.count);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id, code, count);
+//    }
 
     @Override
     public String toString() {

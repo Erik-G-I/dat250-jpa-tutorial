@@ -46,11 +46,7 @@ public class CreditCardsMainTest {
 
         assertEquals(address.getStreet(), "Inndalsveien");
         assertEquals(address.getNumber(), 28);
-        for(Customer owner : address.getOwners()) {
-
-            assertEquals(owner, Set.of(customer).iterator().next());
-        }
-        //assertEquals(address.getOwners(), Set.of(customer));
+        assertEquals(address.getOwners(), Set.of(customer));
 
         // Test credit cards
         assertEquals(customer.getCreditCards().size(), 2);
@@ -76,14 +72,7 @@ public class CreditCardsMainTest {
         Bank bank = firstCard.getOwningBank();
         assertEquals(bank.getId(),secondCard.getOwningBank().getId()); // Bank objects of the two cards are identical!
         assertEquals(bank.getName(), "Pengebank");
-
-        Collection<CreditCard> testCards = Set.of(firstCard, secondCard);
-        Collection<CreditCard> bankCards = bank.getOwnedCards();
-
-        //Rewrote test as it did not return true even if it compared to identical sets
-        for (CreditCard card : bankCards) {
-            assertTrue(testCards.contains(card));
-        }
+        assertEquals(bank.getOwnedCards(), Set.of(firstCard, secondCard));
 
     }
 

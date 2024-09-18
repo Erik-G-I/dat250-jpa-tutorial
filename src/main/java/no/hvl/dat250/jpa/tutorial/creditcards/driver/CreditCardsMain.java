@@ -10,6 +10,7 @@ import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Set;
 
 public class CreditCardsMain {
 
@@ -45,7 +46,7 @@ public class CreditCardsMain {
     creditCard2.setBalance(1);
     creditCard2.setPincode(pincode);
 
-    Collection<CreditCard> creditCards = new HashSet<>();
+    Set<CreditCard> creditCards = new HashSet<>();
     creditCards.add(creditCard1);
     creditCards.add(creditCard2);
 
@@ -64,7 +65,7 @@ public class CreditCardsMain {
     address.setStreet("Inndalsveien");
 
 
-    Collection<Address> addresses = new HashSet<>();
+    Set<Address> addresses = new HashSet<>();
     addresses.add(address);
 
     Customer customer = new Customer();
@@ -73,7 +74,7 @@ public class CreditCardsMain {
     customer.setCreditCards(creditCards);
     customer.setAddresses(addresses);
 
-    Collection<Customer> customers = new HashSet<>();
+    Set<Customer> customers = new HashSet<>();
     customers.add(customer);
     address.setOwners(customers);
 

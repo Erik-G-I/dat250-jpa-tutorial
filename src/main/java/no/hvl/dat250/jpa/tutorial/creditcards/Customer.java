@@ -1,6 +1,6 @@
 package no.hvl.dat250.jpa.tutorial.creditcards;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Objects;
 
 import jakarta.persistence.*;
@@ -12,21 +12,21 @@ public class Customer {
     private Long id;
     private String name;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-    private Collection<Address> addresses;
+    private Set<Address> addresses;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-    private Collection<CreditCard> creditCards;
+    private Set<CreditCard> creditCards;
 
     public String getName() {
         // TODO: implement method!
         return name;
     }
 
-    public Collection<Address> getAddresses() {
+    public Set<Address> getAddresses() {
         // TODO: implement method!
         return addresses;
     }
 
-    public Collection<CreditCard> getCreditCards() {
+    public Set<CreditCard> getCreditCards() {
         // TODO: implement method!
         return creditCards;
     }
@@ -39,26 +39,26 @@ public class Customer {
         this.name = name;
     }
 
-    public void setAddresses(Collection<Address> addresses) {
+    public void setAddresses(Set<Address> addresses) {
         this.addresses = addresses;
     }
 
-    public void setCreditCards(Collection<CreditCard> creditCards) {
+    public void setCreditCards(Set<CreditCard> creditCards) {
         this.creditCards = creditCards;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Customer customer = (Customer) o;
-        return Objects.equals(id, customer.id) && Objects.equals(name, customer.name) && Objects.equals(addresses, customer.addresses) && Objects.equals(creditCards, customer.creditCards);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, addresses, creditCards);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Customer customer = (Customer) o;
+//        return Objects.equals(id, customer.id) && Objects.equals(name, customer.name) && Objects.equals(addresses, customer.addresses) && Objects.equals(creditCards, customer.creditCards);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id, name, addresses, creditCards);
+//    }
 
     @Override
     public String toString() {

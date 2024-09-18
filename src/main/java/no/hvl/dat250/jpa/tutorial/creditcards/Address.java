@@ -2,6 +2,7 @@ package no.hvl.dat250.jpa.tutorial.creditcards;
 
 import java.util.Collection;
 import java.util.Objects;
+import java.util.Set;
 
 import jakarta.persistence.*;
 
@@ -13,7 +14,7 @@ public class Address {
     private String street;
     private Integer number;
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST})
-    private Collection<Customer> owners;
+    private Set<Customer> owners;
 
     public String getStreet() {
         // TODO: implement method!
@@ -42,22 +43,22 @@ public class Address {
         this.number = number;
     }
 
-    public void setOwners(Collection<Customer> owners) {
+    public void setOwners(Set<Customer> owners) {
         this.owners = owners;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Address address = (Address) o;
-        return Objects.equals(id, address.id) && Objects.equals(street, address.street) && Objects.equals(number, address.number) && Objects.equals(owners, address.owners);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, street, number, owners);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Address address = (Address) o;
+//        return Objects.equals(id, address.id) && Objects.equals(street, address.street) && Objects.equals(number, address.number) && Objects.equals(owners, address.owners);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id, street, number, owners);
+//    }
 
     @Override
     public String toString() {

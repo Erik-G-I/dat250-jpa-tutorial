@@ -71,18 +71,18 @@ public class CreditCard {
         this.creditLimit = creditLimit;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CreditCard that = (CreditCard) o;
-        return Objects.equals(id, that.id) && Objects.equals(number, that.number) && Objects.equals(balance, that.balance) && Objects.equals(creditLimit, that.creditLimit) && Objects.equals(pincode, that.pincode) && Objects.equals(bank, that.bank);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, number, balance, creditLimit, pincode, bank);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        CreditCard that = (CreditCard) o;
+//        return Objects.equals(id, that.id) && Objects.equals(number, that.number) && Objects.equals(balance, that.balance) && Objects.equals(creditLimit, that.creditLimit) && Objects.equals(pincode, that.pincode) && Objects.equals(bank, that.bank);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id, number, balance, creditLimit, pincode, bank);
+//    }
 
     @Override
     public String toString() {

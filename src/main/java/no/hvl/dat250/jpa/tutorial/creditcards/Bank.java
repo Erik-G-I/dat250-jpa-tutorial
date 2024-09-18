@@ -1,8 +1,9 @@
 package no.hvl.dat250.jpa.tutorial.creditcards;
 
 import jakarta.persistence.*;
-import java.util.Collection;
+import java.util.Set;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class Bank {
@@ -11,7 +12,7 @@ public class Bank {
     private Long id;
     private String name;
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-    private Collection<CreditCard> creditCards;
+    private Set<CreditCard> creditCards;
 
     public Long getId() {
         return id;
@@ -22,7 +23,7 @@ public class Bank {
         return name;
     }
 
-    public Collection<CreditCard> getOwnedCards() {
+    public Set<CreditCard> getOwnedCards() {
         // TODO: implement method!
         return creditCards;
     }
@@ -35,22 +36,22 @@ public class Bank {
         this.name = name;
     }
 
-    public void setCreditCards(Collection<CreditCard> creditCards) {
+    public void setCreditCards(Set<CreditCard> creditCards) {
         this.creditCards = creditCards;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Bank bank = (Bank) o;
-        return Objects.equals(id, bank.id) && Objects.equals(name, bank.name) && Objects.equals(creditCards, bank.creditCards);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Bank bank = (Bank) o;
+//        return Objects.equals(id, bank.id) && Objects.equals(name, bank.name) && Objects.equals(creditCards, bank.creditCards);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id, name);
+//    }
 
     @Override
     public String toString() {
