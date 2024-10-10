@@ -17,12 +17,10 @@ public class Pincode {
     }
 
     public String getCode() {
-        // TODO: implement method!
         return code;
     }
 
     public Integer getCount() {
-        // TODO: implement method!
         return count;
     }
 
